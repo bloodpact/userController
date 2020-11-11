@@ -5,6 +5,8 @@ const Users = new Schema({
     place: Number,
     account: Number,
     FIO: String,
+    pass: String,
+    address:String,
     phone: Number,
     email: String,
     carName: String,

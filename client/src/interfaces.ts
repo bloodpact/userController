@@ -4,6 +4,8 @@ export default interface IData{
     place: number | null | string,
     account: number | null | string,
     FIO: string | null,
+    pass: string | null,
+    address: string | null,
     phone: number | null | string,
     email: string | null,
     carName: string | null,
@@ -12,12 +14,6 @@ export default interface IData{
     isMember: boolean | null |string
 }
 export default interface IInputDAta{
-    parkingNum : number | null | string,
-    place: number | null | string,
-    account: number | null | string,
-    FIO: string | null,
-    phone: string | null | number,
-    email: string | null,
     carName: string | null,
     carNum: string | null,
     comment: string | null,

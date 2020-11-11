@@ -7,6 +7,8 @@ type userData = {
     FIO: string | null,
     phone: string | null | number,
     email: string | null,
+    pass: string | null,
+    address: string | null,
     carName: string | null,
     carNum: string | null,
     comment: string | null,
@@ -19,12 +21,14 @@ const [dataInput, setDataInput] =  React.useState<userData>({parkingNum:0,
     FIO:'',
     phone:0,
     email:'',
+    pass:'',
+    address:'',
     carName:'',
     carNum:'',
     comment:'',
     isMember:false
 });
-const changeHandler =(e: React.ChangeEvent<HTMLInputElement>) => {
+const changeHandler =(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     
     setDataInput({...dataInput, [e.target.name]: e.target.value})  
  }
@@ -54,6 +58,15 @@ const changeHandler =(e: React.ChangeEvent<HTMLInputElement>) => {
                     <div className="input-field col s6">
                         <input onChange={changeHandler}  name="FIO" id="FIO" type="text" className="validate"/>
                         <label htmlFor="FIO">ФИО</label>
+                    </div>
+                    
+                    <div className="input-field col s6">
+                        <textarea onChange={changeHandler}  id="pass" name="pass" className="materialize-textarea"></textarea>
+                        <label htmlFor="pass">Паспротные данные</label>
+                    </div>
+                    <div className="input-field col s6">
+                        <textarea onChange={changeHandler}  id="address" name="address" className="materialize-textarea"></textarea>
+                        <label htmlFor="address">Адрес</label>
                     </div>
                     <div className="input-field col s6">
                         <input type="text" onChange={changeHandler}  name="phone" id="phone" className="validate"/>
