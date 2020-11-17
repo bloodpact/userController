@@ -15,22 +15,36 @@ function error(message: string): never {
     throw new Error(message);
   }
 export const dataRequest = async()=>{
-     try{
-        const response:AxiosResponse<[]> = await axios.get('http://localhost:3333')
-        const data = response.data
-        return data
+     try {
+        const response:AxiosResponse<[]> = await axios.get('http://localhost:3333');
+        const data = response.data;
+        return data;
     }
-     catch{
-        error('Error getting data')
-     }
-            
-      
+     catch {
+        error('Error getting data');
+     }  
 }
-export const dataSend = async (dataInput:userData)=>{
-    try{
-        await axios.post('http://localhost:3333',dataInput)
+export const dataSend = async(dataInput:userData) => {
+    try {
+        await axios.post('http://localhost:3333', dataInput);
     }
-    catch{
-        error('Error post data')
+    catch {
+        error('Error post data');
+    }
+}
+export const deleteData = async () => {
+    try {
+        await axios.delete('http://localhost:3333');
+    }
+    catch {
+        error('Error post data');
+    }
+}
+export const dataUpdate = async(dataInput:userData) => {
+    try {
+        await axios.put('http://localhost:3333', dataInput);
+    }
+    catch {
+        error('Error post data');
     }
 }

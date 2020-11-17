@@ -29,8 +29,7 @@ const [dataInput, setDataInput] =  React.useState<userData>({parkingNum:0,
     isMember:false
 });
 const changeHandler =(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
-    
-    setDataInput({...dataInput, [e.target.name]: e.target.value})  
+       setDataInput({...dataInput, [e.target.name]: e.target.value})  
  }
  const submitHandler = async()=>{
      const format = (value:any)=>{

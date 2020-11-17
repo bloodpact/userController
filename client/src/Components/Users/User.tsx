@@ -9,8 +9,7 @@ const User:React.FunctionComponent<DetailType> = ({detail}) => {
         M.AutoInit();
     })
     return (
-        <div>
-            {/* <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> */}
+        <div>         
             <div id="userModal" className="modal">
                 <div className="modal-content">
                     <h5>{detail.FIO}</h5>
